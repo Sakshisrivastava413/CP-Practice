@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int t;
+  cin >> t;
+  while(t--) {
+    int a, b;
+    int c = 0;
+    cin >> a >> b;
+    for(int g = a; g <= b; g++) {
+    bitset<32>binary(g);
+      string binaryString = binary.to_string();
+      for(int i = 0; i < binaryString.length(); i++) {
+        if (binaryString[i] == '1') c++;
+      }
+    }
+    cout << c;
+    }
+return 0;
+
+}
+
+
+int main(){
+  int t;
+  cin >> t;
+  while(t--) {
+    int a, b;
+    int c = 0;
+    cin >> a >> b;
+    string allBinaries;
+    for(int g = a; g <= b; g++) {
+      bitset<32>binary(g);
+      string binaryString = binary.to_string();
+      allBinaries.append(binaryString);
+    }
+    for(int i = 0; i < allBinaries.length(); i++) {
+      if (allBinaries[i] == '1') c++;
+    }
+    cout << c;
+  }
+  return 0;
+}
+
